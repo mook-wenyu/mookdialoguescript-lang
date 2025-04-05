@@ -1,0 +1,117 @@
+{
+  "节点定义": {
+    "prefix": ["node", "jiedian"],
+    "body": [":: ${1:节点名称}", "    ${2:对话内容}", "$0"],
+    "description": "创建新的对话节点"
+  },
+  "节点定义-中文": {
+    "prefix": ["nodezhcn", "节点"],
+    "body": ["：： ${1:节点名称}", "    ${2:对话内容}", "$0"],
+    "description": "创建新的对话节点（中文符号）"
+  },
+  "条件分支": {
+    "prefix": "if",
+    "body": [
+      "if ${1:条件}",
+      "    ${2:内容}",
+      "endif",
+      "$0"
+    ],
+    "description": "创建条件分支"
+  },
+  "条件分支完整": {
+    "prefix": "ifelse",
+    "body": [
+      "if ${1:条件}",
+      "    ${2:内容}",
+      "elif ${3:条件}",
+      "    ${4:内容}",
+      "else",
+      "    ${5:内容}",
+      "endif",
+      "$0"
+    ],
+    "description": "创建完整条件分支"
+  },
+  "选项": {
+    "prefix": ["choice", "xuanxiang"],
+    "body": [
+      "-> ${1:选项文本}",
+      "    ${2:选项内容}",
+      "$0"
+    ],
+    "description": "添加选项"
+  },
+  "选项-中文": {
+    "prefix": ["choicezhcn", "选项"],
+    "body": [
+      "-》 ${1:选项文本}",
+      "    ${2:选项内容}",
+      "$0"
+    ],
+    "description": "添加选项（中文符号）"
+  },
+  "选项-带条件": {
+    "prefix": ["choice-if", "xuanxiangif"],
+    "body": [
+      "-> ${1:选项文本} [if ${2:条件}]",
+      "    ${3:选项内容}",
+      "$0"
+    ],
+    "description": "添加带条件判断的选项"
+  },
+  "选项-带条件-中文": {
+    "prefix": ["choice-if-zhcn", "选项if"],
+    "body": [
+      "-》 ${1:选项文本} [if ${2:条件}]",
+      "    ${3:选项内容}",
+      "$0"
+    ],
+    "description": "添加带条件判断的选项（中文符号）"
+  },
+  "角色对话": {
+    "prefix": "character",
+    "body": ["${1:角色名}: ${2:对话内容}", "$0"],
+    "description": "添加角色对话"
+  },
+  "角色对话带表情": {
+    "prefix": "character-expression",
+    "body": ["${1:角色名}[${2:表情}]: ${3:对话内容}", "$0"],
+    "description": "添加带表情的角色对话"
+  },
+  "旁白对话": {
+    "prefix": "narration",
+    "body": ["${1:旁白内容}", "$0"],
+    "description": "添加旁白对话"
+  },
+  "变量声明": {
+    "prefix": "var",
+    "body": ["var $${1:变量名} = ${2:值}", "$0"],
+    "description": "声明变量"
+  },
+  "变量设置": {
+    "prefix": "set",
+    "body": ["set $${1:变量名} = ${2:值}", "$0"],
+    "description": "设置变量值"
+  },
+  "跳转": {
+    "prefix": ["jump", "tiaozhuan"],
+    "body": ["=> ${1:节点名称}", "$0"],
+    "description": "跳转到另一个节点"
+  },
+  "跳转-中文": {
+    "prefix": ["jumpzhcn", "跳转"],
+    "body": ["=》 ${1:节点名称}", "$0"],
+    "description": "跳转到另一个节点（中文符号）"
+  },
+  "调用": {
+    "prefix": "call",
+    "body": ["call ${1:函数名}(${2:参数})", "$0"],
+    "description": "调用函数"
+  },
+  "等待": {
+    "prefix": "wait",
+    "body": ["wait ${1:时间}", "$0"],
+    "description": "等待指定时间"
+  }
+} 

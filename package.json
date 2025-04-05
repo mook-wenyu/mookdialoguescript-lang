@@ -1,0 +1,35 @@
+{
+  "name": "mookdialoguescript-lang",
+  "displayName": "MookDialogueScript Lang",
+  "description": "MookDialogueScript Language Support",
+  "version": "0.0.1",
+  "publisher": "wenyu",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mook-wenyu/mookdialoguescript-lang"
+  },
+  "engines": {
+    "vscode": "^1.96.2"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "mookdialoguescript",
+      "aliases": ["MookDialogueScript", "mookdialoguescript"],
+      "extensions": [".mds"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "mookdialoguescript",
+      "scopeName": "source.mds",
+      "path": "./syntaxes/mookdialoguescript.tmLanguage.json"
+    }],
+    "snippets": [{
+      "language": "mookdialoguescript",
+      "path": "./snippets/mookdialoguescript.json"
+    }]
+  }
+}
