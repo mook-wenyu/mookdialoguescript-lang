@@ -11,13 +11,16 @@
 ### 主要特性
 
 - **完整的语法高亮支持**
-  - 节点定义（`::节点名` 或 `：：节点名`）
+  - 节点定义
+    - 冒号式：`::节点名` 或 `：：节点名`
+    - 破折号式：`--- 节点名`
+  - 节点结束标记：`===` （可选，主要用于代码折叠）
   - 条件语句（`if`、`elif`、`else`、`endif`）
   - 系统命令（`var`、`set`、`call`、`wait`、`jump` 等）
   - 变量系统（`$变量名`）
   - 多种对话形式
   - 选项系统
-  - 注释支持
+  - 注释支持（`//` 开头，必须独立一行）
 
 - **智能代码片段**
   - 快速插入常用语法结构
@@ -29,39 +32,19 @@
   - 代码折叠
   - 智能括号匹配
 
-### 快速开始
+### 安装和使用
 
-1. 安装扩展后，创建一个以 `.mds` 为扩展名的文件
-2. 使用以下基本语法开始编写对话脚本：
-
-```mds
-:: 开始
-    这是一段旁白文本。
-    
-    小明: 你好，这是一段对话。
-    小红[开心]: 你也好！
-    
-    -> 继续聊天
-        小明: 今天天气真好！
-        => 天气话题
-        
-    -> 结束对话 [if $时间 > 18]
-        小明: 时间不早了，明天见！
-        => 结束
-
-:: 天气话题
-    if $下雨 == true
-        小红: 可是外面在下雨呢。
-    else
-        小红: 是啊，阳光正好！
-    endif
-```
+1. 在 VSCode 扩展市场中搜索 "MookDialogueScript" 并安装
+2. 安装完成后，创建一个以 `.mds` 为扩展名的文件
+3. 开始编写对话脚本，享受语法高亮和代码片段支持
 
 ### 代码片段速查表
 
 | 代码片段 | 描述 | 示例 |
 |---------|------|------|
 | `node` / `节点` | 创建新节点 | `:: 节点名` |
+| `nodeend` / `节点结束` | 创建带结束标记的节点 | `:: 节点名` ... `===` |
+| `nodeblock` / `节点块` | 创建带结束标记的节点块 | `--- 节点名` ... `===` |
 | `choice` / `选项` | 添加选项 | `-> 选项文本` |
 | `if` | 条件分支 | `if $条件` |
 | `character` / `角色` | 角色对话 | `角色名: 对话` |
@@ -75,13 +58,16 @@ This VSCode extension provides syntax highlighting and editing support for MookD
 ### Key Features
 
 - **Full Syntax Highlighting**
-  - Node definitions (`::nodename`)
+  - Node definitions
+    - Colon style: `::nodename`
+    - Dash style: `--- nodename`
+  - Node ending marker: `===` (optional, primarily for code folding)
   - Conditional statements (`if`, `elif`, `else`, `endif`)
   - System commands (`var`, `set`, `call`, `wait`, `jump`, etc.)
   - Variable system (`$varname`)
   - Multiple dialogue formats
   - Choice system
-  - Comment support
+  - Comment support (`//` at the beginning, must be on its own line)
 
 - **Smart Snippets**
   - Quick insertion of common syntax structures
@@ -93,39 +79,19 @@ This VSCode extension provides syntax highlighting and editing support for MookD
   - Code folding
   - Smart bracket matching
 
-### Quick Start
+### Installation and Usage
 
-1. After installing the extension, create a file with the `.mds` extension
-2. Start writing dialogue scripts using the following basic syntax:
-
-```mds
-:: start
-    This is a narration text.
-    
-    John: Hello, this is a dialogue.
-    Mary[happy]: Hi there!
-    
-    -> Continue chatting
-        John: The weather is nice today!
-        => weather_topic
-        
-    -> End conversation [if $time > 18]
-        John: It's getting late, see you tomorrow!
-        => end
-
-:: weather_topic
-    if $raining == true
-        Mary: But it's raining outside.
-    else
-        Mary: Yes, the sunshine is perfect!
-    endif
-```
+1. Search for "MookDialogueScript" in the VSCode extension marketplace and install it
+2. After installation, create a file with the `.mds` extension
+3. Start writing dialogue scripts with syntax highlighting and snippet support
 
 ### Snippet Quick Reference
 
 | Snippet | Description | Example |
 |---------|-------------|---------|
 | `node` | Create new node | `:: nodename` |
+| `nodeend` | Create node with ending marker | `:: nodename` ... `===` |
+| `nodeblock` | Create block-style node | `--- nodename` ... `===` |
 | `choice` | Add choice | `-> choice text` |
 | `if` | Condition branch | `if $condition` |
 | `character` | Character dialogue | `name: dialogue` |

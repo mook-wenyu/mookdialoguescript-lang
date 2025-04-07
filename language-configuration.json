@@ -9,7 +9,8 @@
     "brackets": [
         ["{", "}"],
         ["[", "]"],
-        ["(", ")"]
+        ["(", ")"],
+        ["---", "==="]
     ],
     // symbols that are auto closed when typing
     "autoClosingPairs": [
@@ -17,7 +18,8 @@
         ["[", "]"],
         ["(", ")"],
         ["\"", "\""],
-        ["'", "'"]
+        ["'", "'"],
+        ["---", "==="]
     ],
     // symbols that can be used to surround a selection
     "surroundingPairs": [
@@ -25,22 +27,23 @@
         ["[", "]"],
         ["(", ")"],
         ["\"", "\""],
-        ["'", "'"]
+        ["'", "'"],
+        ["---", "==="]
     ],
     "folding": {
         "markers": {
-            "start": "^\\s*(::|：：)\\b",
-            "end": "^\\s*(::|：：)\\b"
+            "start": "^\\s*(::|：：|---)\\s+[A-Za-z0-9_\\u4e00-\\u9fa5]+\\s*$",
+            "end": "^\\s*===\\s*$"
         }
     },
     "wordPattern": "(-?\\d*\\.\\d\\w*)|([^\\`\\~\\!\\@\\#\\%\\^\\&\\*\\(\\)\\-\\=\\+\\[\\{\\]\\}\\\\\\|\\;\\:\\'\\\"\\,\\.\\<\\>\\/\\?\\s]+)",
     "indentationRules": {
         "increaseIndentPattern": "^\\s*((->|-》).*|if\\s+.*|elif\\s+.*|else\\s*$)",
-        "decreaseIndentPattern": "^\\s*(endif)"
+        "decreaseIndentPattern": "^\\s*(endif|===)"
     },
     "onEnterRules": [
         {
-            "beforeText": "^\\s*(=>|=》|jump\\s+|endif).*$",
+            "beforeText": "^\\s*(=>|=》|jump\\s+|endif|===).*$",
             "action": {
                 "indent": "outdent"
             }

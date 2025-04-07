@@ -6,10 +6,16 @@
 			"include": "#comments"
 		},
 		{
-			"include": "#keywords"
+			"include": "#node_blocks"
 		},
 		{
 			"include": "#node_definitions"
+		},
+		{
+			"include": "#node_endings"
+		},
+		{
+			"include": "#keywords"
 		},
 		{
 			"include": "#jumps"
@@ -54,6 +60,69 @@
 				}
 			]
 		},
+		"node_blocks": {
+			"patterns": [
+				{
+					"name": "meta.node.block.mookdialoguescript",
+					"begin": "^\\s*(---)\\s*([A-Za-z0-9_\\u4e00-\\u9fa5]+)\\s*$",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.control.mookdialoguescript"
+						},
+						"2": {
+							"name": "entity.name.class.mookdialoguescript"
+						}
+					},
+					"end": "^\\s*(===)\\s*$",
+					"endCaptures": {
+						"1": {
+							"name": "keyword.control.mookdialoguescript"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#comments"
+						},
+						{
+							"include": "#keywords"
+						},
+						{
+							"include": "#jumps"
+						},
+						{
+							"include": "#condition_expressions"
+						},
+						{
+							"include": "#choices"
+						},
+						{
+							"include": "#dialogues"
+						},
+						{
+							"include": "#tags"
+						},
+						{
+							"include": "#variables"
+						},
+						{
+							"include": "#string_interpolation"
+						},
+						{
+							"include": "#operators"
+						},
+						{
+							"include": "#functions"
+						},
+						{
+							"include": "#strings"
+						},
+						{
+							"include": "#numbers"
+						}
+					]
+				}
+			]
+		},
 		"node_definitions": {
 			"patterns": [
 				{
@@ -65,6 +134,31 @@
 						},
 						"2": {
 							"name": "entity.name.class.mookdialoguescript"
+						}
+					}
+				},
+				{
+					"name": "entity.name.section.mookdialoguescript",
+					"match": "^\\s*(---)\\s*([A-Za-z0-9_\\u4e00-\\u9fa5]+)",
+					"captures": {
+						"1": {
+							"name": "punctuation.definition.bold.mookdialoguescript"
+						},
+						"2": {
+							"name": "entity.name.class.mookdialoguescript"
+						}
+					}
+				}
+			]
+		},
+		"node_endings": {
+			"patterns": [
+				{
+					"name": "entity.name.section.end.mookdialoguescript",
+					"match": "^\\s*(===)\\s*$",
+					"captures": {
+						"1": {
+							"name": "punctuation.definition.bold.mookdialoguescript"
 						}
 					}
 				}
