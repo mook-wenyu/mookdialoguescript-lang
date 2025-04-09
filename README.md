@@ -8,13 +8,15 @@
 
 这个 VSCode 扩展为 MookDialogueScript 对话脚本语言提供语法高亮和编辑辅助功能。MookDialogueScript 是一个专门用于编写游戏对话和剧情的脚本语言，支持分支对话、条件判断、变量系统等功能。
 
+对话脚本系统的完整实现请参考：[MookDialogueScriptFromUnity](https://github.com/mook-wenyu/MookDialogueScriptFromUnity)
+
 ### 主要特性
 
 - **完整的语法高亮支持**
-  - 节点定义
-    - 冒号式：`::节点名` 或 `：：节点名`
-    - 破折号式：`--- 节点名`
-  - 节点结束标记：`===` （可选，主要用于代码折叠）
+  - 节点定义：`--- 节点名`
+  - 节点结束标记：`===`
+  - 元数据标记：`[key: value]` 或 `【key：value】`（节点定义后的一行或连续多行）
+    - 特殊元数据：`[title: 标题]`（使用特殊高亮）
   - 条件语句（`if`、`elif`、`else`、`endif`）
   - 系统命令（`var`、`set`、`call`、`wait`、`jump` 等）
   - 变量系统（`$变量名`）
@@ -42,9 +44,8 @@
 
 | 代码片段 | 描述 | 示例 |
 |---------|------|------|
-| `node` / `节点` | 创建新节点 | `:: 节点名` |
-| `nodeend` / `节点结束` | 创建带结束标记的节点 | `:: 节点名` ... `===` |
-| `nodeblock` / `节点块` | 创建带结束标记的节点块 | `--- 节点名` ... `===` |
+| `node` / `节点` | 创建节点 | `--- 节点名` ... `===` |
+| `metadata` / `元数据` | 添加元数据 | `[key: value]` |
 | `choice` / `选项` | 添加选项 | `-> 选项文本` |
 | `if` | 条件分支 | `if $条件` |
 | `character` / `角色` | 角色对话 | `角色名: 对话` |
@@ -55,13 +56,15 @@
 
 This VSCode extension provides syntax highlighting and editing support for MookDialogueScript, a scripting language designed for writing game dialogues and narratives.
 
+For the complete dialogue script system implementation, please refer to: [MookDialogueScriptFromUnity](https://github.com/mook-wenyu/MookDialogueScriptFromUnity)
+
 ### Key Features
 
 - **Full Syntax Highlighting**
-  - Node definitions
-    - Colon style: `::nodename`
-    - Dash style: `--- nodename`
-  - Node ending marker: `===` (optional, primarily for code folding)
+  - Node definitions: `--- nodename`
+  - Node ending marker: `===`
+  - Metadata markers: `[key: value]` or `【key：value】` (one or more lines after node definition)
+    - Special metadata: `[title: title]` (with special highlighting)
   - Conditional statements (`if`, `elif`, `else`, `endif`)
   - System commands (`var`, `set`, `call`, `wait`, `jump`, etc.)
   - Variable system (`$varname`)
@@ -89,9 +92,8 @@ This VSCode extension provides syntax highlighting and editing support for MookD
 
 | Snippet | Description | Example |
 |---------|-------------|---------|
-| `node` | Create new node | `:: nodename` |
-| `nodeend` | Create node with ending marker | `:: nodename` ... `===` |
-| `nodeblock` | Create block-style node | `--- nodename` ... `===` |
+| `node` | Create node | `--- nodename` ... `===` |
+| `metadata` | Add metadata | `[key: value]` |
 | `choice` | Add choice | `-> choice text` |
 | `if` | Condition branch | `if $condition` |
 | `character` | Character dialogue | `name: dialogue` |

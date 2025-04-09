@@ -43,7 +43,7 @@
     },
     "onEnterRules": [
         {
-            "beforeText": "^\\s*(=>|=》|jump\\s+|endif|===).*$",
+            "beforeText": "^\\s*(=>|=》|jump\\s+|endif|---|===).*$",
             "action": {
                 "indent": "outdent"
             }

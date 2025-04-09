@@ -15,6 +15,9 @@
 			"include": "#node_endings"
 		},
 		{
+			"include": "#metadata"
+		},
+		{
 			"include": "#keywords"
 		},
 		{
@@ -80,6 +83,9 @@
 						}
 					},
 					"patterns": [
+						{
+							"include": "#metadata"
+						},
 						{
 							"include": "#comments"
 						},
@@ -507,6 +513,52 @@
 		"numbers": {
 			"name": "constant.numeric.mookdialoguescript",
 			"match": "\\b[0-9]+(\\.[0-9]+)?\\b"
+		},
+		"metadata": {
+			"patterns": [
+				{
+					"name": "meta.metadata.title.mookdialoguescript",
+					"match": "(\\[|【)(title)(\\s*)(:|：)(\\s*)([^\\]】]+)(\\]|】)",
+					"captures": {
+						"1": {
+							"name": "keyword.control.mookdialoguescript"
+						},
+						"2": {
+							"name": "block.scope.begin.mookdialoguescript"
+						},
+						"4": {
+							"name": "constant.mookdialoguescript"
+						},
+						"6": {
+							"name": "entity.name.class.mookdialoguescript"
+						},
+						"7": {
+							"name": "keyword.control.mookdialoguescript"
+						}
+					}
+				},
+				{
+					"name": "meta.metadata.mookdialoguescript",
+					"match": "(\\[|【)([^:\\]】]+)(\\s*)(:|：)(\\s*)([^\\]】]+)(\\]|】)",
+					"captures": {
+						"1": {
+							"name": "keyword.control.mookdialoguescript"
+						},
+						"2": {
+							"name": "block.scope.begin.mookdialoguescript"
+						},
+						"4": {
+							"name": "constant.mookdialoguescript"
+						},
+						"6": {
+							"name": "rgb-value.mookdialoguescript"
+						},
+						"7": {
+							"name": "keyword.control.mookdialoguescript"
+						}
+					}
+				}
+			]
 		}
 	},
 	"scopeName": "source.mds"

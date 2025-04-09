@@ -1,28 +1,13 @@
 {
   "节点定义": {
-    "prefix": ["node", "jiedian"],
-    "body": [":: ${1:节点名称}", "${2:对话内容}", "$0"],
-    "description": "创建新的对话节点（内容不缩进）"
-  },
-  "节点定义-中文": {
-    "prefix": ["nodezhcn", "节点"],
-    "body": ["：： ${1:节点名称}", "${2:对话内容}", "$0"],
-    "description": "创建新的对话节点（中文符号，内容不缩进）"
-  },
-  "节点定义-新语法": {
-    "prefix": ["nodeblock", "jiedianblock", "节点块"],
+    "prefix": ["node", "jiedian", "节点"],
     "body": ["--- ${1:节点名称}", "${2:对话内容}", "===", "$0"],
-    "description": "创建新的带结束标记的对话节点块（内容不缩进）"
+    "description": "创建带结束标记的对话节点块"
   },
-  "节点定义-带结束": {
-    "prefix": ["nodeend", "jiedianend", "节点结束"],
-    "body": [":: ${1:节点名称}", "${2:对话内容}", "===", "$0"],
-    "description": "创建带结束标记的冒号式对话节点"
-  },
-  "节点定义-中文-带结束": {
-    "prefix": ["nodeendzhcn", "节点结束中文"],
-    "body": ["：： ${1:节点名称}", "${2:对话内容}", "===", "$0"],
-    "description": "创建带结束标记的冒号式对话节点（中文符号）"
+  "元数据": {
+    "prefix": ["metadata", "meta", "元数据", "ysj", "yuanshuju"],
+    "body": ["[${1:key}: ${2:value}]", "$0"],
+    "description": "添加元数据标记"
   },
   "条件分支": {
     "prefix": "if",
@@ -35,7 +20,7 @@
     "description": "创建条件分支"
   },
   "条件分支完整": {
-    "prefix": "ifelse",
+    "prefix": ["ifelse", "ifelif", "ifend"],
     "body": [
       "if ${1:条件}",
       "    ${2:内容}",
@@ -49,7 +34,7 @@
     "description": "创建完整条件分支"
   },
   "选项": {
-    "prefix": ["choice", "xuanxiang"],
+    "prefix": ["choice", "xuanxiang", "选项", "xx"],
     "body": [
       "-> ${1:选项文本}",
       "    ${2:选项内容}",
@@ -57,17 +42,8 @@
     ],
     "description": "添加选项"
   },
-  "选项-中文": {
-    "prefix": ["choicezhcn", "选项"],
-    "body": [
-      "-》 ${1:选项文本}",
-      "    ${2:选项内容}",
-      "$0"
-    ],
-    "description": "添加选项（中文符号）"
-  },
   "选项-带条件": {
-    "prefix": ["choice-if", "xuanxiangif"],
+    "prefix": ["choice-if", "xuanxiangif", "选项if", "xxif"],
     "body": [
       "-> ${1:选项文本} [if ${2:条件}]",
       "    ${3:选项内容}",
@@ -75,27 +51,18 @@
     ],
     "description": "添加带条件判断的选项"
   },
-  "选项-带条件-中文": {
-    "prefix": ["choice-if-zhcn", "选项if"],
-    "body": [
-      "-》 ${1:选项文本} [if ${2:条件}]",
-      "    ${3:选项内容}",
-      "$0"
-    ],
-    "description": "添加带条件判断的选项（中文符号）"
-  },
   "角色对话": {
-    "prefix": "character",
+    "prefix": ["character", "juese", "角色", "角色对话", "js", "js对话"],
     "body": ["${1:角色名}: ${2:对话内容}", "$0"],
     "description": "添加角色对话"
   },
   "角色对话带表情": {
-    "prefix": "character-expression",
+    "prefix": ["character-expression", "juesebiaoqing", "jsbq","角色表情", "js表情"],
     "body": ["${1:角色名}[${2:表情}]: ${3:对话内容}", "$0"],
     "description": "添加带表情的角色对话"
   },
   "旁白对话": {
-    "prefix": "narration",
+    "prefix": ["narration", "旁白", "旁白对话", "pb", "pb对话"],
     "body": ["${1:旁白内容}", "$0"],
     "description": "添加旁白对话"
   },
@@ -110,14 +77,9 @@
     "description": "设置变量值"
   },
   "跳转": {
-    "prefix": ["jump", "tiaozhuan"],
-    "body": ["=> ${1:节点名称}", "$0"],
+    "prefix": "jump",
+    "body": ["=>${1:节点名称}", "$0"],
     "description": "跳转到另一个节点"
-  },
-  "跳转-中文": {
-    "prefix": ["jumpzhcn", "跳转"],
-    "body": ["=》 ${1:节点名称}", "$0"],
-    "description": "跳转到另一个节点（中文符号）"
   },
   "调用": {
     "prefix": "call",
@@ -129,4 +91,4 @@
     "body": ["wait ${1:时间}", "$0"],
     "description": "等待指定时间"
   }
-} 
+}
