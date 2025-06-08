@@ -21,6 +21,9 @@
   - 系统命令（`var`、`set`、`call`、`wait`、`jump` 等）
   - 变量系统（`$变量名`）
   - 多种对话形式
+    - 角色对话：`角色名: 对话内容`
+    - 旁白：`: 旁白内容` 或 `：旁白内容`（推荐使用）
+    - 无冒号旁白：`旁白内容`
   - 选项系统
   - 注释支持（`//` 开头，必须独立一行）
 
@@ -49,6 +52,7 @@
 | `choice` / `选项` | 添加选项 | `-> 选项文本` |
 | `if` | 条件分支 | `if $条件` |
 | `character` / `角色` | 角色对话 | `角色名: 对话` |
+| `narration` / `旁白` | 旁白对话 | `: 旁白内容` |
 
 
 <a name="english"></a>
@@ -69,6 +73,9 @@ For the complete dialogue script system implementation, please refer to: [MookDi
   - System commands (`var`, `set`, `call`, `wait`, `jump`, etc.)
   - Variable system (`$varname`)
   - Multiple dialogue formats
+    - Character dialogue: `name: dialogue`
+    - Narration: `: narration content` (recommended)
+    - No-colon narration: `narration content`
   - Choice system
   - Comment support (`//` at the beginning, must be on its own line)
 
@@ -97,6 +104,7 @@ For the complete dialogue script system implementation, please refer to: [MookDi
 | `choice` | Add choice | `-> choice text` |
 | `if` | Condition branch | `if $condition` |
 | `character` | Character dialogue | `name: dialogue` |
+| `narration` | Narration | `: narration content` |
 
 
 ## License

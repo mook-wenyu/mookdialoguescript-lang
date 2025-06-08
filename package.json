@@ -2,7 +2,7 @@
   "name": "mookdialoguescript-lang",
   "displayName": "MookDialogueScript Lang",
   "description": "MookDialogueScript Language Support",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "publisher": "wenyu",
   "repository": {
     "type": "git",
